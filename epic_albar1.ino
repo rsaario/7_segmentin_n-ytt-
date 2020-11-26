@@ -43,6 +43,7 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDOFF);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("0");
 }void one(){
 	digitalWrite (Led_A, LEDOFF);
   	digitalWrite (Led_B, LEDON);
@@ -52,6 +53,7 @@ void zero(){
   	digitalWrite (Led_F, LEDOFF);
   	digitalWrite (Led_G, LEDOFF);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("1");
 }void two(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDON);
@@ -61,6 +63,7 @@ void zero(){
   	digitalWrite (Led_F, LEDOFF);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("2");
 }void three(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDON);
@@ -70,6 +73,7 @@ void zero(){
   	digitalWrite (Led_F, LEDOFF);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("3");
 }void four(){
 	digitalWrite (Led_A, LEDOFF);
   	digitalWrite (Led_B, LEDON);
@@ -79,6 +83,7 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("4");
 }void five(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDOFF);
@@ -88,6 +93,7 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("5");
 }void six(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDOFF);
@@ -97,6 +103,7 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("6");
 }void seven(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDON);
@@ -106,6 +113,7 @@ void zero(){
   	digitalWrite (Led_F, LEDOFF);
   	digitalWrite (Led_G, LEDOFF);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("7");
 }void eight(){
   	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDON);
@@ -115,6 +123,7 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("8");
 }void nine(){
 	digitalWrite (Led_A, LEDON);
   	digitalWrite (Led_B, LEDON);
@@ -124,13 +133,19 @@ void zero(){
   	digitalWrite (Led_F, LEDON);
   	digitalWrite (Led_G, LEDON);
   	digitalWrite (Led_DOT, LEDON);
+  	Serial.println("9");
 }
 
 
-
-void showNum(int number){//funktio johon laitettu muuttuja
-  switch(number){//muuttaa annettua muuttujaa
-  	case 0:zero();break;//mikäli muuttuja on 0 se kutsuu funktion zero
+//funktio johon laitettu muuttuja
+void showNum(int number){
+  //muuttaa annettua muuttujaa
+  switch(number){
+    //mikäli muuttuja on 0 se kutsuu funktion zero
+  	case 0:zero();;break;
+	/*break lopettaa haun funktiosta, jos ei ole muistanut tätä funktio 
+    ei pysähdy kyseisen tapauksen kohdalle 
+    ja hyppää kyseisen tapauksen yli*/
     case 1:one();break;
     case 2:two();break;
     case 3:three();break;
@@ -140,12 +155,17 @@ void showNum(int number){//funktio johon laitettu muuttuja
     case 7:seven();break;
     case 8:eight();break;
     case 9:nine();break;
+    
   }
 }
-	
+//kutsuu sen sisällä olevia funktioita	
 void loop(){
-	showNum(0);
+//kutsuu kyseistä funktiota muuttujan arvolla 0
+  showNum(0);
+/*pitää määritetyn mittaisen tauon jonka jälkeen 
+jatkaa funktioitten kutsumista*/
   delay (viive);
+//kutsuu funktiota muuttujalla 1
   	showNum(1);
   delay (viive);
   	showNum(2);
@@ -163,5 +183,5 @@ void loop(){
   	showNum(8);
   delay (viive);
   	showNum(9);
-  	delay (viive);
+  delay (viive);
 }
