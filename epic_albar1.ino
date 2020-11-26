@@ -9,6 +9,7 @@
 
 #define LEDOFF HIGH
 #define LEDON LOW 
+#define viive 1000
 
 void setup()
 {
@@ -20,6 +21,7 @@ void setup()
   pinMode(Led_F, OUTPUT);
   pinMode(Led_G, OUTPUT);
   pinMode(Led_DOT, OUTPUT);
+  
   digitalWrite(Led_A, LEDOFF);
   digitalWrite(Led_B, LEDOFF);
   digitalWrite(Led_C, LEDOFF);
@@ -28,10 +30,9 @@ void setup()
   digitalWrite(Led_F, LEDOFF);
   digitalWrite(Led_G, LEDOFF);
   digitalWrite(Led_DOT, LEDOFF);
+  
   Serial.begin(9600);
 }
-
-int viive = 1000;
 
 void zero(){
 	digitalWrite (Led_A, LEDON);
@@ -126,26 +127,41 @@ void zero(){
 }
 
 
-void loop()
-{
- zero();
-  delay(viive);
- one();
-  delay(viive);
- two();
-  delay(viive);
- three();
-  delay(viive);
- four();
-  delay(viive);
- five();
-  delay(viive);
- six();
-  delay(viive);
- seven();
-  delay(viive);
- eight();
-  delay(viive);
- nine();
-  delay(viive);
+
+void showNum(int number){//funktio johon laitettu muuttuja
+  switch(number){//muuttaa annettua muuttujaa
+  	case 0:zero();break;//mikäli muuttuja on 0 se kutsuu funktion zero
+    case 1:one();break;
+    case 2:two();break;
+    case 3:three();break;
+    case 4:four();break;
+    case 5:five();break;
+    case 6:six();break;
+    case 7:seven();break;
+    case 8:eight();break;
+    case 9:nine();break;
+  }
+}
+	
+void loop(){
+	showNum(0);
+  delay (viive);
+  	showNum(1);
+  delay (viive);
+  	showNum(2);
+  delay (viive);
+  	showNum(3);
+  delay (viive);
+  	showNum(4);
+  delay (viive);
+  	showNum(5);
+  delay (viive);
+  	showNum(6);
+  delay (viive);
+  	showNum(7);
+  delay (viive);
+  	showNum(8);
+  delay (viive);
+  	showNum(9);
+  	delay (viive);
 }
