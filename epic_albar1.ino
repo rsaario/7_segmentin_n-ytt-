@@ -20,6 +20,14 @@ void setup()
   pinMode(Led_F, OUTPUT);
   pinMode(Led_G, OUTPUT);
   pinMode(Led_DOT, OUTPUT);
+  digitalWrite(Led_A, LEDOFF);
+  digitalWrite(Led_B, LEDOFF);
+  digitalWrite(Led_C, LEDOFF);
+  digitalWrite(Led_D, LEDOFF);
+  digitalWrite(Led_E, LEDOFF);
+  digitalWrite(Led_F, LEDOFF);
+  digitalWrite(Led_G, LEDOFF);
+  digitalWrite(Led_DOT, LEDOFF);
   Serial.begin(9600);
 }
 
@@ -141,5 +149,3 @@ void loop()
  nine();
   delay(viive);
 }
-
-
